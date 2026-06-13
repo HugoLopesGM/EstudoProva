@@ -19,9 +19,9 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                             .requestMatchers(HttpMethod.POST,"/campeoes").permitAll()
                             .requestMatchers(HttpMethod.GET,"/campeoes").permitAll()
-                            .requestMatchers(HttpMethod.GET,"/capeoes/**").permitAll()
+                            .requestMatchers(HttpMethod.GET,"/campeoes/**").permitAll()
                             .requestMatchers(HttpMethod.DELETE,"/campeoes/**").permitAll()
-                            .requestMatchers(HttpMethod.PUT,"/campeoes").permitAll()
+                            .requestMatchers(HttpMethod.PUT,"/campeoes/**").permitAll()
                             .anyRequest().authenticated()
                     )
             .sessionManagement(session->session.

@@ -36,5 +36,9 @@ public class CampeaoService {
         return repository.save(campeaoModel);
     }
 
+    public List<CampeaoModel>findByName(String nome){
+        return repository.findByName(nome);
+    }
+
 
 }

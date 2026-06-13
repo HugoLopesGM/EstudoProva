@@ -2,6 +2,7 @@ package com.EstudoProva.estudo.controller;
 
 import com.EstudoProva.estudo.model.CampeaoModel;
 import com.EstudoProva.estudo.service.CampeaoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +17,7 @@ public class CampeaoController {
     private CampeaoService service;
 
     @PostMapping
-    public CampeaoModel save(@RequestBody CampeaoModel campeaoModel){
+    public CampeaoModel save(@Valid @RequestBody CampeaoModel campeaoModel){
         return service.save(campeaoModel);
     }
 
@@ -40,5 +41,10 @@ public class CampeaoController {
     public CampeaoModel atualizar(@PathVariable UUID id, @RequestBody CampeaoModel campeaoModel){
         campeaoModel.setId(id);
         return service.save(campeaoModel);
+    }
+
+    @GetMapping("/{nome}")
+    public List<CampeaoModel>findByNome(@PathVariable String nome){
+        return service.findByName(nome);
     }
 }
