@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@RequestMapping
+@RequestMapping(path = "/campeoes")
 @RestController
 public class CampeaoController {
     @Autowired
