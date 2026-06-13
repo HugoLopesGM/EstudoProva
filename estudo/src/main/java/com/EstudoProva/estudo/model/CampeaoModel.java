@@ -11,7 +11,7 @@ import java.util.UUID;
 @Table(name = "tb_campeao")
 public class CampeaoModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     private String nome;
